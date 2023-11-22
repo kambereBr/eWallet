@@ -1,6 +1,8 @@
 class OperationsController < ApplicationController
+  before_action :set_group
+
   def index
-    @operations = current_user.authored_operations
+    @operations = @group.operations
   end
 
   def show
@@ -12,29 +14,29 @@ class OperationsController < ApplicationController
   end
 
   def create
-    group_ids = params[:operation][:group_ids]
+    @operation = @group.operations.build(operation_params)
     ops_code = generate_operation_code
-    group_ids.each do |group_id|
-      operation_params = operation_params_with_group_id(group_id)
-      @operation = current_user.authored_operations.build(operation_params)
-      @operation.author_id = current_user
-      @operation.operation_code = ops_code
-      @operation.save!
-    end
+    @operation.author_id = current_user.id
+    @operation.operation_code = ops_code
 
-    redirect_to operations_path, notice: 'Operations were successfully created.'
+    if @operation.save!
+      redirect_to group_operations_path(@group), notice: 'Operation was successfully created.'
+    else
+      render :new
+    end
   end
 
   private
 
-  def operation_params_with_group_id(group_id)
-    params.require(:operation).permit(:name, :amount).merge(group_id:)
+  def operation_params
+    params.require(:operation).permit(:name, :amount)
   end
 
   def generate_operation_code
-    loop do
-      self.operation_code = SecureRandom.hex(10) # Generates a 6-character random hex string
-      break unless Operation.exists?(operation_code:)
-    end
+    @operation_code = SecureRandom.hex(10) # Generates a 10-character random hex string
+  end
+
+  def set_group
+    @group = Group.find(params[:group_id])
   end
 end
