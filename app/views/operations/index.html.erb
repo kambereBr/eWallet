@@ -1,0 +1,27 @@
+<h1>Transactions for <%= @group.name %></h1>
+
+<% if @operations.any? %>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Amount</th>
+        <!-- Add other relevant columns -->
+      </tr>
+    </thead>
+    <tbody>
+      <% @operations.each do |operation| %>
+        <tr>
+          <td><%= operation.name %></td>
+          <td><%= operation.amount %></td>
+          <!-- Add other operation attributes as needed -->
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>No operations found for this group.</p>
+<% end %>
+
+<%= link_to 'New Transaction', new_group_operation_path(@group), class:("newTransaction") %>
+<%= link_to 'Back', groups_path, class:("goBackBtn") %>
