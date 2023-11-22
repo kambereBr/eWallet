@@ -32,6 +32,16 @@ gem 'devise'
 
 gem 'cancancan'
 
+gem 'letter_opener'
+
+gem 'activestorage'
+
+gem 'image_processing', '~> 1.2'
+
+gem 'error_highlight', '>= 0.4.0'
+
+gem 'bootstrap', '~> 5.3.0'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 
