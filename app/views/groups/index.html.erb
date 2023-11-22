@@ -1,0 +1,24 @@
+<h1>All Categories</h1>
+<div class='container'>
+  <div class='row'>
+    <ul class='col-10 text-danger'>
+      <% if @groups.any? %>
+        <% @groups.each do |group| %>
+          <li>
+            <%= link_to group_operations_path(group) do %>
+              <label><%= group.name  %></label>
+            <% end %>
+            <% if group.icon.attached? %>
+              <%= image_tag group.icon, style: 'width: 50px; height: 50px;' %>
+            <% end %>
+          </li>
+        <% end %>
+      <% else %>
+        <p>No category found.</p>
+      <% end %>
+    </ul>
+  </div>
+  
+<%= link_to 'New Category', new_group_path , class:("btn btn-secondary")%>
+</div>
+
