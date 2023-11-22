@@ -40,7 +40,7 @@ gem 'image_processing', '~> 1.2'
 
 gem 'error_highlight', '>= 0.4.0'
 
-gem 'bootstrap', '~> 5.3.0'
+gem 'bootstrap-sass', '~> 3.4.1'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
