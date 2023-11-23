@@ -42,6 +42,12 @@ gem 'error_highlight', '>= 0.4.0'
 
 gem 'bootstrap-sass', '~> 3.4.1'
 
+gem 'cssbundling-rails'
+
+gem 'bootstrap_form', '~> 5.4'
+
+gem 'sassc'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 
@@ -74,6 +80,8 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+
+  gem 'bullet'
 end
 
 group :test do
