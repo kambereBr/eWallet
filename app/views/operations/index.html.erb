@@ -1,27 +1,33 @@
-<h1>Transactions for <%= @group.name %></h1>
-
-<% if @operations.any? %>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Amount</th>
-        <!-- Add other relevant columns -->
-      </tr>
-    </thead>
-    <tbody>
-      <% @operations.each do |operation| %>
+<div class="row total-amount-header">
+  <div class="col-md-6">Transactions for <b><%= @group.name %></b></div>
+  <div class="col-md-6"><b><%= number_to_currency(@total_amount) %></b></div>
+</div>
+<div class='container container-table'>
+  <% if @operations.any? %>
+    <table class="operations-table">
+      <thead>
         <tr>
-          <td><%= operation.name %></td>
-          <td><%= operation.amount %></td>
-          <!-- Add other operation attributes as needed -->
+          <th>Name</th>
+          <th>Amount</th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
-<% else %>
-  <p>No operations found for this group.</p>
-<% end %>
-
-<%= link_to 'New Transaction', new_group_operation_path(@group), class:("newTransaction") %>
-<%= link_to 'Back', groups_path, class:("goBackBtn") %>
+      </thead>
+      <tbody>
+        <% @operations.each do |operation| %>
+          <tr>
+            <td>
+              <%= operation.name %>
+              <br>
+              <small><%= operation.created_at %></small>
+            </td>
+            <td><%= number_to_currency(operation.amount) %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% else %>
+    <p>No transaction found for this category.</p>
+  <% end %>
+  <div>
+    <%= link_to 'Add New Transaction', new_group_operation_path(@group), class:("btn btn-success")%>
+  </div>
+</div>
