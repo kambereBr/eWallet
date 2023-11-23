@@ -1,13 +1,14 @@
 Rails.application.routes.draw do
+  root 'home#index'
+
   devise_for :users
-
-  unauthenticated do
-    root 'home#index', as: :unauthenticated_root
-  end
-
   devise_scope :user do
     authenticated :user do
       root to: "groups#index", as: :authenticated_root
+    end
+
+    unauthenticated do
+      root to: "devise/sessions#home", as: :unauthenticated_root
     end
   end
 
