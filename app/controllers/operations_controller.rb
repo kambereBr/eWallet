@@ -2,7 +2,8 @@ class OperationsController < ApplicationController
   before_action :set_group
 
   def index
-    @operations = @group.operations
+    @operations = @group.operations.order(created_at: :desc)
+    @total_amount = @operations.sum(:amount)
   end
 
   def show
