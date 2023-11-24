@@ -7,6 +7,7 @@
     <table class="operations-table">
       <thead>
         <tr>
+          <th>Cat.</th>
           <th>Name</th>
           <th>Amount</th>
         </tr>
@@ -14,6 +15,11 @@
       <tbody>
         <% @operations.each do |operation| %>
           <tr>
+            <td>
+              <% if @group.icon.attached? %>
+                <%= image_tag @group.icon, style: 'width: 50px; height: 50px;' %>
+              <% end %>
+            </td>
             <td>
               <%= operation.name %>
               <br>
@@ -27,7 +33,7 @@
   <% else %>
     <p>No transaction found for this category.</p>
   <% end %>
-  <div>
+</div>
+<div class="btn-new-container">
     <%= link_to 'Add New Transaction', new_group_operation_path(@group), class:("btn btn-success")%>
-  </div>
 </div>

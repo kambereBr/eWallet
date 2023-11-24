@@ -182,6 +182,13 @@ h3 {
 
 .home-main-container {
   height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.home-footer-container {
+  padding: 15px;
 }
 
 .input-auth,
@@ -248,12 +255,12 @@ hr {
 /* Groups index */
 .group-item {
   display: flex;
-  align-items: center;
+  // align-items: center;
   justify-content: space-between;
   padding: 10px;
   border-bottom: 1px solid #ccc;
   background-color: white;
-  margin-top: 5px;
+  margin-top: 10px;
   width: 90%;
 }
 
@@ -294,11 +301,14 @@ small {
 }
 
 .container-table {
+  display: flex;
+  flex-direction: column;
   margin-top: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding-left: 5px !important;
+  height: 80vh !important;
 }
 
 .operations-table {
@@ -326,4 +336,12 @@ small {
   background: transparent;
   border: none;
   font-weight: bold;
+}
+
+.btn-new-transact-container {
+  margin-top: auto;
+}
+
+.btn-new-container > .btn {
+  width: 100%;
 }
