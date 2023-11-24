@@ -6,7 +6,6 @@ $green-color: #5cb85c;
 
 body {
   height: 100%;
-  // max-width: 480px;
   padding: 0;
   margin: 0;
 }
@@ -137,6 +136,10 @@ li {
   width: 100%;
 }
 
+.btn-new-container > .btn {
+  width: 100%;
+}
+
 .home_list > li > .btn {
   width: 40vw;
 }
@@ -255,7 +258,6 @@ hr {
 /* Groups index */
 .group-item {
   display: flex;
-  // align-items: center;
   justify-content: space-between;
   padding: 10px;
   border-bottom: 1px solid #ccc;
@@ -340,8 +342,4 @@ small {
 
 .btn-new-transact-container {
   margin-top: auto;
-}
-
-.btn-new-container > .btn {
-  width: 100%;
 }
