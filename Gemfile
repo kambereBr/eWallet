@@ -38,8 +38,6 @@ gem 'activestorage'
 
 gem 'image_processing', '~> 1.2'
 
-gem 'error_highlight', '>= 0.4.0'
-
 gem 'bootstrap-sass', '~> 3.4.1'
 
 gem 'cssbundling-rails'
