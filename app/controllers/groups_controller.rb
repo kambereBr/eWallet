@@ -1,4 +1,6 @@
 class GroupsController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @groups = current_user.groups.includes(icon_attachment: :blob)
     @user_operations = Operation.where(author_id: current_user.id)
