@@ -20,7 +20,8 @@
       </div>
     </div>
     <div class="text-center">
-      <%= render "devise/shared/error_messages", resource: resource %>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
       <% if devise_mapping.rememberable? %>
             <div class="field">
               <%= f.check_box :remember_me %>
