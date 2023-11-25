@@ -1,0 +1,39 @@
+<div class="row total-amount-header">
+  <div class="col-md-6">Transactions for <b><%= @group.name %></b></div>
+  <div class="col-md-6"><b><%= number_to_currency(@total_amount) %></b></div>
+</div>
+<div class='container container-table'>
+  <% if @operations.any? %>
+    <table class="operations-table">
+      <thead>
+        <tr>
+          <th>Cat.</th>
+          <th>Name</th>
+          <th>Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @operations.each do |operation| %>
+          <tr>
+            <td>
+              <% if @group.icon.attached? %>
+                <%= image_tag @group.icon, style: 'width: 50px; height: 50px;' %>
+              <% end %>
+            </td>
+            <td>
+              <%= operation.name %>
+              <br>
+              <small><%= operation.created_at %></small>
+            </td>
+            <td><%= number_to_currency(operation.amount) %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% else %>
+    <p>No transaction found for this category.</p>
+  <% end %>
+</div>
+<div class="btn-new-container">
+    <%= link_to 'Add New Transaction', new_group_operation_path(@group), class:("btn btn-success")%>
+</div>

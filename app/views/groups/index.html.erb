@@ -1,0 +1,39 @@
+<div class="row total-amount-header">
+  <div class="col-md-6">Total amount</div>
+  <div class="col-md-6"><b><%= number_to_currency(@total_amount) %></b></div>
+</div>
+<div class='container category-container'>
+  <div class='row'>
+    <ul>
+      <% if @groups.any? %>
+        <% @groups.each do |group| %>
+          <li class="single-category">
+            <%= link_to group_operations_path(group) do %>
+              <div class="group-item">
+                <div class="icon">
+                  <% if group.icon.attached? %>
+                    <%= image_tag group.icon, style: 'width: 50px; height: 50px;' %>
+                  <% end %>
+                </div>
+                <div class="name">
+                  <%= group.name %>
+                  <br>
+                  <small><%= group.created_at %></small>
+                </div>
+                <div class="amount">
+                  <b><%= number_to_currency(group.operations.sum(:amount)) %></b>
+                </div>
+              </div>
+            <% end %>
+          </li>
+        <% end %>
+      <% else %>
+        <p>No category found.</p>
+      <% end %>
+    </ul>
+  </div>
+</div>
+<div class="row row-new-category">
+  <%= link_to 'New Category', new_group_path , class:("btn btn-success btn-fill-width")%>
+</div>
+

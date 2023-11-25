@@ -28,6 +28,24 @@ gem 'jbuilder'
 
 gem 'rubocop', '>= 1.0', '< 2.0'
 
+gem 'devise'
+
+gem 'cancancan'
+
+gem 'letter_opener'
+
+gem 'activestorage'
+
+gem 'image_processing', '~> 1.2'
+
+gem 'bootstrap-sass', '~> 3.4.1'
+
+gem 'cssbundling-rails'
+
+gem 'bootstrap_form', '~> 5.4'
+
+gem 'sassc'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 
@@ -61,11 +79,17 @@ group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
 
-  gem 'error_highlight', '>= 0.4.0', platforms: [:ruby]
+  gem 'bullet'
 end
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem 'capybara'
+
+  gem 'shoulda-matchers'
+
+  gem 'rails-controller-testing'
+
+  gem 'rspec-rails'
   gem 'selenium-webdriver'
 end

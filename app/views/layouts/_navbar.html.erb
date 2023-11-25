@@ -1,0 +1,11 @@
+<nav class="navbar">
+  <ul class="navbar-nav navbar-collapse list_link">
+    <li class="nav-item">
+      <%= link_to '', groups_path, class:("bi bi-arrow-left text-white") %>
+    </li>
+    <li class="nav-item"><b>eWallet</b></li>
+    <li class="nav-item">
+      <%= button_to("Log Out", destroy_user_session_path, method: :delete, class:('logout')) %>
+    </li>
+  </ul> 
+</nav>
