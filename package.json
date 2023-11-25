@@ -1,9 +1,12 @@
 {
   "devDependencies": {
-    "stylelint": "^13.13.1",
-    "stylelint-config-standard": "^21.0.0",
-    "stylelint-csstree-validator": "^1.9.0",
-    "stylelint-scss": "^3.21.0"
+    "autoprefixer": "^10.4.16",
+    "bootstrap": "^5.3.2",
+    "bootstrap-icons": "^1.11.1",
+    "nodemon": "^3.0.1",
+    "postcss": "^8.4.31",
+    "postcss-cli": "^10.1.0",
+    "sass": "^1.69.5"
   },
   "scripts": {
     "build:css:compile": "sass ./app/assets/stylesheets/apps.bootstrap.scss:./app/assets/builds/application.css --no-source-map --load-path=node_modules",
