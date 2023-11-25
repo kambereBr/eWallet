@@ -81,16 +81,21 @@
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LIVE DEMO  -->
+<p align="right">(<a href="#readme-top">back to top</a>)</p> 
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
 
-- [Live Demo Link]()[ link ]
+- [Live Demo Link](https://mywallet-9ql0.onrender.com/)
+
+## Video Demo 
+<a name="video-demo" href="https://www.loom.com/share/0fcc401045e743be847c8df956978a01?sid=992c3297-c190-4667-b857-30a8c59488fe">Video Demo</a>
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-<!-- GETTING STARTED -->
+<!-- GETTING STARTED --> https://www.loom.com/share/0fcc401045e743be847c8df956978a01
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
