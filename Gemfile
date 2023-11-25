@@ -46,9 +46,6 @@ gem 'bootstrap_form', '~> 5.4'
 
 gem 'sassc'
 
-# Use Sass to process CSS
-gem 'sassc-rails'
-
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 
