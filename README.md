@@ -29,7 +29,7 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [RECIPE APP] <a name="about-project"></a>
+# 📖 [eWallet] <a name="about-project"></a>
 
 **[eWallet]** 💰 is a comprehensive mobile web application designed to streamline your financial management by providing a user-friendly platform to track and manage your budget effectively. public so anyone can access them.
 
