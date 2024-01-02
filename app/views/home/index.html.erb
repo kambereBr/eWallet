@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="home-main-container">
+    <div class="row">
+      <h1 class="text-center">eWallet</h1>
+    </div>
+
+    <div class="row">
+      <h2 class="text-center message">
+        Seamlessly manage budgets and track spending for stress-free financial control.
+      </h2>
+    </div>
+  </div>
+
+  <div class="row p-3 home-footer-container">
+    <div class="col-md-12 col-lg-6">
+      <%= link_to 'Login', new_user_session_path, class:("btn btn-primary btn-auth") %>
+    </div>
+    <div class="col-md-12 col-lg-6">
+      <%= link_to 'Sign Up', new_user_registration_path, class:("btn btn-auth") %>
+    </div>
+  </div>  
+</div>

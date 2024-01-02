@@ -1,0 +1,31 @@
+<div class="row total-amount-header">
+  <div class="col-md-6">New Category</div>
+</div>
+<div class="container">
+  <% if @group.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@group.errors.count, "error") %> prohibited this group from being saved:</h2>
+      <ul>
+        <% @group.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form_for @group, html: { multipart: true } do |f| %>
+    <div class="card-form">
+      <div>
+        <%= f.text_field :name, required: true, placeholder: "name",  class:("input-data") %>
+      </div>
+      <hr/>
+      <div class="file-chooser">
+        <label class="custom-file-label" for="customFileInput">Choose Icon <i class="bi bi-image-alt"></i></label>
+        <%= f.file_field :icon, required: true, placeholder: "icon",  class:("custom-file-input") %>
+      </div>
+    </div>
+    <div class="btn-new-transact-container">
+      <%= f.submit 'Create Category',  class:("btn btn-success") %>
+    </div>
+  <% end %>
+</div>

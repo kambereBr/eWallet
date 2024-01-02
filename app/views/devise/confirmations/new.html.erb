@@ -1,0 +1,22 @@
+<div class="container">
+  <nav class="navbar">
+    <div class="text-center">
+      <h4>Resend confirmation instructions</h4>
+    </div>
+  </nav>
+
+  <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+    <div class="card-form">
+      <div class="field">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "email", required: true, class:("input-auth"), value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
+      </div>
+    </div>
+    <div class="text-center">
+      <div class="actions">
+        <%= f.submit "Resend confirmation instructions", class:("btn btn-primary") %>
+      </div>
+      <%= render "devise/shared/error_messages", resource: resource %>
+      <%= render "devise/shared/links" %>
+    </div>
+  <% end %>
+</div>
